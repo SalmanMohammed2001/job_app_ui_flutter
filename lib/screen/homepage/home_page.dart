@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:job_app_ui/screen/homepage/widget/app_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,37 +13,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
-      body: SafeArea(
+      body: const SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey.shade200),
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15)),
-                child: const Icon(Icons.menu),
-              ),
-              const Text(
-                "Find Jobs",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-              ),
-              Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                   color: Colors.grey,
-                    image: const DecorationImage(
-                        image: NetworkImage(
-                            "https://newprofilepic.photo-cdn.net//assets/images/article/profile.jpg?90af0c8")),
-                    borderRadius: BorderRadius.circular(15)),
-              ),
-            ],
-          ),
+          padding: EdgeInsets.all(12.0),
+          child: CustomAppBar(),
         ),
       ),
     );
