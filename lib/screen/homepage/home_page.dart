@@ -209,7 +209,28 @@ class _HomePageState extends State<HomePage> {
                     );
                   }),
                 ),
-              )
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Recent Jobs",
+                    style: TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Show All",
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
