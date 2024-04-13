@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_app_ui/screen/homepage/widget/app_bar.dart';
+import 'package:job_app_ui/screen/homepage/widget/category_bar.dart';
 import 'package:job_app_ui/screen/homepage/widget/greetings_text.dart';
 import 'package:job_app_ui/screen/homepage/widget/search_bar.dart';
 import 'package:job_app_ui/service/get_deta.dart';
@@ -158,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 15,
                 ),
-                const CategoryBar(title: "Recent Jobs"),
+                const CategoryBar(title: "Recents Jobs"),
                 const SizedBox(
                   height: 15,
                 ),
@@ -195,34 +196,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class CategoryBar extends StatelessWidget {
-  final String title;
-  final String subTie;
-  const CategoryBar({super.key, required this.title, this.subTie = 'Show All'});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 21,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          subTie,
-          style: const TextStyle(
-            fontSize: 17,
-          ),
-        ),
-      ],
     );
   }
 }
