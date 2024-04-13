@@ -186,6 +186,16 @@ class _JobViewPageState extends State<JobViewPage> {
                     : const Text("Review")
           ],
         ),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            width: size.width,
+            height: 110,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+            ),
+          ),
+        ),
       ]),
     );
   }
