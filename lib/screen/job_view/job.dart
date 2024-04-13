@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:job_app_ui/model/job_model.dart';
 
 class JobViewPage extends StatefulWidget {
-  const JobViewPage({super.key});
+  const JobViewPage({super.key, required this.model});
+  final JobModel model;
 
   @override
   State<JobViewPage> createState() => _JobViewPageState();
@@ -62,9 +64,9 @@ class _JobViewPageState extends State<JobViewPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      "Senior Software Enginnering",
-                      style: TextStyle(
+                    Text(
+                      widget.model.title,
+                      style: const TextStyle(
                         fontSize: 23,
                         fontWeight: FontWeight.bold,
                       ),
@@ -74,9 +76,9 @@ class _JobViewPageState extends State<JobViewPage> {
                     ),
                     Row(
                       children: [
-                        const Text(
-                          "LKR 80000 Per Month",
-                          style: TextStyle(
+                        Text(
+                          widget.model.salary,
+                          style: const TextStyle(
                             color: Colors.grey,
                           ),
                         ),
@@ -89,9 +91,9 @@ class _JobViewPageState extends State<JobViewPage> {
                             color: Colors.grey.shade300,
                             borderRadius: BorderRadius.circular(9),
                           ),
-                          child: const Text(
-                            "Full time",
-                            style: TextStyle(color: Colors.black),
+                          child: Text(
+                            widget.model.type,
+                            style: const TextStyle(color: Colors.black),
                           ),
                         )
                       ],
@@ -99,10 +101,9 @@ class _JobViewPageState extends State<JobViewPage> {
                     const Spacer(),
                     Row(
                       children: [
-                        const CircleAvatar(
+                        CircleAvatar(
                           radius: 20,
-                          backgroundImage: NetworkImage(
-                              "https://static.vecteezy.com/system/resources/previews/023/986/921/original/tiktok-logo-tiktok-logo-transparent-tiktok-icon-transparent-free-free-png.png"),
+                          backgroundImage: NetworkImage(widget.model.logo),
                         ),
                         const SizedBox(
                           width: 10,
@@ -110,15 +111,15 @@ class _JobViewPageState extends State<JobViewPage> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              "TikTok",
-                              style: TextStyle(
+                            Text(
+                              widget.model.companyName,
+                              style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
-                              "Colombo",
+                              widget.model.city,
                               style: TextStyle(
                                 color: Colors.grey.shade900,
                                 fontSize: 14,
@@ -128,9 +129,9 @@ class _JobViewPageState extends State<JobViewPage> {
                           ],
                         ),
                         const Spacer(),
-                        const Text(
-                          "4 Days Left",
-                          style: TextStyle(
+                        Text(
+                          widget.model.time,
+                          style: const TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
                           ),

@@ -23,7 +23,9 @@ class PopularRow extends StatelessWidget {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
-                  return const JobViewPage();
+                  return JobViewPage(
+                    model: data.getJobData()[index],
+                  );
                 },
               ));
             },
