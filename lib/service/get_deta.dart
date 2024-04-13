@@ -16,7 +16,7 @@ class GetData {
           title: "Senior UX Designer",
           salary: "LKR 80000 /month",
           companyName: "Instgram",
-          logo: instaLogo,
+          logo: uberLogo,
           city: "Colombo",
           time: "7 Days Left"),
       JobModel(
@@ -30,14 +30,14 @@ class GetData {
           title: "Senior Mobile Developer",
           salary: "LKR 140000 /month",
           companyName: "Instgram",
-          logo: tikTokLogo,
+          logo: uberLogo,
           city: "Negambo",
           time: "7 Days Left"),
       JobModel(
           title: "Senior Web Designer",
           salary: "LKR 180000 /month",
           companyName: "FaceBokk",
-          logo: instaLogo,
+          logo: uberLogo,
           city: "USA",
           time: "7 Days Left")
     ];

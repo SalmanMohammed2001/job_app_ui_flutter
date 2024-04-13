@@ -9,7 +9,7 @@ class JobModel {
 
   JobModel({
     required this.title,
-    this.type = "full Time",
+    this.type = "Full Time",
     required this.salary,
     required this.companyName,
     required this.logo,
