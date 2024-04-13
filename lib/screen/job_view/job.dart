@@ -188,50 +188,52 @@ class _JobViewPageState extends State<JobViewPage> {
         ),
         Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            width: size.width,
-            height: 80,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade900,
-                    borderRadius: BorderRadius.circular(15),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              width: size.width,
+              height: 80,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(20)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade900,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: const Icon(
+                      Icons.bookmark,
+                      color: Colors.white,
+                    ),
                   ),
-                  child: const Icon(
-                    Icons.bookmark,
-                    color: Colors.white,
+                  const SizedBox(
+                    width: 15,
                   ),
-                ),
-                const SizedBox(
-                  width: 15,
-                ),
-                Container(
-                  width: size.width * 0.6,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade900,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: const Center(
-                    child: Text(
-                      "Apply Now",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                  Container(
+                    width: size.width * 0.6,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade900,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Apply Now",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
