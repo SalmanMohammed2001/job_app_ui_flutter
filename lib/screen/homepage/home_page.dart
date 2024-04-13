@@ -39,23 +39,8 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Popular Jobs",
-                      style: TextStyle(
-                        fontSize: 21,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      "Show All",
-                      style: TextStyle(
-                        fontSize: 17,
-                      ),
-                    ),
-                  ],
+                const CategoryBar(
+                  title: "Popular Jobs",
                 ),
                 const SizedBox(
                   height: 10,
@@ -173,24 +158,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 15,
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Recent Jobs",
-                      style: TextStyle(
-                        fontSize: 21,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      "Show All",
-                      style: TextStyle(
-                        fontSize: 17,
-                      ),
-                    ),
-                  ],
-                ),
+                const CategoryBar(title: "Recent Jobs"),
                 const SizedBox(
                   height: 15,
                 ),
@@ -227,6 +195,34 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class CategoryBar extends StatelessWidget {
+  final String title;
+  final String subTie;
+  const CategoryBar({super.key, required this.title, this.subTie = 'Show All'});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 21,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Text(
+          subTie,
+          style: const TextStyle(
+            fontSize: 17,
+          ),
+        ),
+      ],
     );
   }
 }
