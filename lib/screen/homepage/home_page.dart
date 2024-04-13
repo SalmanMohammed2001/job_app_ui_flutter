@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_app_ui/screen/homepage/widget/app_bar.dart';
+import 'package:job_app_ui/screen/homepage/widget/search_bar.dart';
 import 'package:job_app_ui/service/get_deta.dart';
 
 class HomePage extends StatefulWidget {
@@ -47,38 +48,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                Row(
-                  children: [
-                    SizedBox(
-                      width: size.width * 0.75,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          border: UnderlineInputBorder(
-                            borderSide: BorderSide.none,
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          hintText: "search For Jobs",
-                          fillColor: Colors.white,
-                          filled: true,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      width: 55,
-                      height: 55,
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(12)),
-                      child: const Icon(
-                        Icons.search,
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
+                CustomSearchBar(size: size),
                 const SizedBox(
                   height: 10,
                 ),
