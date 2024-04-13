@@ -3,6 +3,7 @@ import 'package:job_app_ui/screen/homepage/widget/app_bar.dart';
 import 'package:job_app_ui/screen/homepage/widget/category_bar.dart';
 import 'package:job_app_ui/screen/homepage/widget/greetings_text.dart';
 import 'package:job_app_ui/screen/homepage/widget/popular_row.dart';
+import 'package:job_app_ui/screen/homepage/widget/recent_column.dart';
 import 'package:job_app_ui/screen/homepage/widget/search_bar.dart';
 import 'package:job_app_ui/service/get_deta.dart';
 
@@ -55,34 +56,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 15,
                 ),
-                Column(
-                    children: List.generate(data.getJobData().length, (index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 80,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 25,
-                          backgroundImage:
-                              NetworkImage(data.getJobData()[index].logo),
-                        ),
-                        title: Text(data.getJobData()[index].title),
-                        subtitle: Text(
-                          "${data.getJobData()[index].companyName} - ${data.getJobData()[index].type}",
-                          style: const TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
-                        trailing: Text(data.getJobData()[index].time),
-                      ),
-                    ),
-                  );
-                }))
+                RecentColumn(data: data)
               ],
             ),
           ),
