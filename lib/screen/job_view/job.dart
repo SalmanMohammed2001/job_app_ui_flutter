@@ -9,7 +9,7 @@ class JobViewPage extends StatefulWidget {
 
 class _JobViewPageState extends State<JobViewPage> {
   final tabbutton = ["Description", "Company", "Reviews"];
-
+  int tabIndex = 0;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -141,7 +141,26 @@ class _JobViewPageState extends State<JobViewPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: tabbutton.map((e) {
-              return Chip(label: Text(e));
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    tabIndex = tabbutton.indexOf(e);
+                  });
+                },
+                child: Chip(
+                  backgroundColor: tabIndex == tabbutton.indexOf(e)
+                      ? Colors.black
+                      : Colors.white,
+                  label: Text(
+                    e,
+                    style: TextStyle(
+                      color: tabIndex == tabbutton.indexOf(e)
+                          ? Colors.white
+                          : Colors.black,
+                    ),
+                  ),
+                ),
+              );
             }).toList(),
           ),
         ],
