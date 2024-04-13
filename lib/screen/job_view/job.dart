@@ -8,6 +8,8 @@ class JobViewPage extends StatefulWidget {
 }
 
 class _JobViewPageState extends State<JobViewPage> {
+  final tabbutton = ["Description", "Company", "Reviews"];
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
@@ -132,7 +134,16 @@ class _JobViewPageState extends State<JobViewPage> {
                 ],
               ),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: tabbutton.map((e) {
+              return Chip(label: Text(e));
+            }).toList(),
+          ),
         ],
       ),
     );
