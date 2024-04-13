@@ -30,20 +30,25 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  "Good Morning Alex",
-                  style: TextStyle(color: Colors.grey, fontSize: 17),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  "Find Your\nCreative Job",
-                  style: TextStyle(
-                    fontSize: 32,
-                    height: 0.9,
-                    fontWeight: FontWeight.bold,
-                  ),
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Good Morning Alex",
+                      style: TextStyle(color: Colors.grey, fontSize: 17),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Find Your\nCreative Job",
+                      style: TextStyle(
+                        fontSize: 32,
+                        height: 0.9,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(
                   height: 10,
