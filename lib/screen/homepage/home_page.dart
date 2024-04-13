@@ -75,6 +75,27 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Popular Jobs",
+                    style: TextStyle(
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Show All",
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
