@@ -139,30 +139,50 @@ class _JobViewPageState extends State<JobViewPage> {
             height: 10,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: tabbutton.map((e) {
-              return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    tabIndex = tabbutton.indexOf(e);
-                  });
-                },
-                child: Chip(
-                  backgroundColor: tabIndex == tabbutton.indexOf(e)
-                      ? Colors.black
-                      : Colors.white,
-                  label: Text(
-                    e,
-                    style: TextStyle(
-                      color: tabIndex == tabbutton.indexOf(e)
-                          ? Colors.white
-                          : Colors.black,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: tabbutton.map((e) {
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      tabIndex = tabbutton.indexOf(e);
+                    });
+                  },
+                  child: Chip(
+                    backgroundColor: tabIndex == tabbutton.indexOf(e)
+                        ? Colors.black
+                        : Colors.white,
+                    label: Text(
+                      e,
+                      style: TextStyle(
+                        color: tabIndex == tabbutton.indexOf(e)
+                            ? Colors.white
+                            : Colors.black,
+                      ),
                     ),
                   ),
-                ),
-              );
-            }).toList(),
-          ),
+                );
+              }).toList()),
+          tabIndex == 0
+              ? Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                    horizontal: 20,
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(15),
+                    height: 170,
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Text(
+                        "Majed is the all-time top scorer of the Saudi League with 189 goals and is also Al-Nassr's all-time top scorer with 260 goals. Majed Abdullah announced his retirement on 12 April 1998 following Al-Nassr's win in the 1998 Asian Cup Winner's Cup in front of 70,000 fans in Riyadh."),
+                  ),
+                )
+              : tabIndex == 1
+                  ? const Text("Company")
+                  : const Text("Review")
         ],
       ),
     );
